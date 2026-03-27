@@ -96,5 +96,27 @@
 
 </div>
 
+<script>
+const checkboxes = document.querySelectorAll('#importantList input');
+
+checkboxes.forEach(cb => {
+    cb.addEventListener('change', updateProgress);
+});
+
+function updateProgress() {
+    let total = checkboxes.length;
+    let checked = 0;
+
+    checkboxes.forEach(cb => {
+        if (cb.checked) checked++;
+    });
+
+    let percent = Math.round((checked / total) * 100);
+
+    document.getElementById('progress').style.width = percent + "%";
+    document.getElementById('percent').innerText = percent + "% Completed";
+}
+</script>
+
 </body>
 </html>
