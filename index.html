@@ -3,65 +3,72 @@
 <head>
 <meta charset="UTF-8">
 <title>English Exam Checklist</title>
+
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        background: linear-gradient(to right, #74ebd5, #ACB6E5);
-        margin: 0;
-        padding: 20px;
-    }
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #74ebd5, #ACB6E5);
+    margin: 0;
+    padding: 20px;
+}
 
-    .container {
-        max-width: 600px;
-        margin: auto;
-        background: white;
-        padding: 20px;
-        border-radius: 15px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
 
-    h1 {
-        text-align: center;
-        color: #333;
-    }
+h1 {
+    text-align: center;
+}
 
-    h2 {
-        color: #555;
-        border-bottom: 2px solid #ddd;
-        padding-bottom: 5px;
-    }
+h2 {
+    border-bottom: 2px solid #ddd;
+}
 
-    ul {
-        list-style: none;
-        padding: 0;
-    }
+ul {
+    list-style: none;
+    padding: 0;
+}
 
-    li {
-        padding: 10px;
-        margin: 5px 0;
-        background: #f1f1f1;
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        transition: 0.3s;
-    }
+li {
+    padding: 10px;
+    margin: 5px 0;
+    background: #f1f1f1;
+    border-radius: 8px;
+}
 
-    li:hover {
-        background: #e0f7fa;
-    }
+.important {
+    background: #ffe0e0;
+}
 
-    input[type="checkbox"] {
-        margin-right: 10px;
-        transform: scale(1.2);
-    }
+/* Progress bar */
+.progress-container {
+    margin: 15px 0;
+}
 
-    .important {
-        background: #ffe0e0;
-    }
+.progress-bar {
+    height: 20px;
+    background: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+}
 
-    .important:hover {
-        background: #ffcccc;
-    }
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: #4CAF50;
+    transition: 0.3s;
+}
+
+#percent {
+    text-align: center;
+    margin-top: 5px;
+    font-weight: bold;
+}
 </style>
 </head>
 
@@ -70,30 +77,37 @@
 <div class="container">
     <h1>📘 English Exam Checklist</h1>
 
+    <!-- Progress -->
+    <div class="progress-container">
+        <div class="progress-bar">
+            <div class="progress-fill" id="progress"></div>
+        </div>
+        <div id="percent">0% Completed</div>
+    </div>
+
     <h2>🔥 Must Study</h2>
-    <ul>
-        <li class="important"><input type="checkbox">The 3Ls of Empowerment</li>
-        <li class="important"><input type="checkbox">Any Woman</li>
-        <li class="important"><input type="checkbox">Matchbox</li>
-        <li class="important"><input type="checkbox">Horegallu</li>
-        <li class="important"><input type="checkbox">Mending Wall</li>
-        <li class="important"><input type="checkbox">The Hour of Truth</li>
-        <li class="important"><input type="checkbox">A Three Wheeled Revolution</li>
-        <li class="important"><input type="checkbox">Rice</li>
-        <li class="important"><input type="checkbox">When a Sapling is Planted</li>
-        <li class="important"><input type="checkbox">Dangers of Drug Abuse</li>
+    <ul id="importantList">
+        <li class="important"><input type="checkbox"> The 3Ls of Empowerment</li>
+        <li class="important"><input type="checkbox"> Any Woman</li>
+        <li class="important"><input type="checkbox"> Matchbox</li>
+        <li class="important"><input type="checkbox"> Horegallu</li>
+        <li class="important"><input type="checkbox"> Mending Wall</li>
+        <li class="important"><input type="checkbox"> The Hour of Truth</li>
+        <li class="important"><input type="checkbox"> A Three Wheeled Revolution</li>
+        <li class="important"><input type="checkbox"> Rice</li>
+        <li class="important"><input type="checkbox"> When a Sapling is Planted</li>
+        <li class="important"><input type="checkbox"> Dangers of Drug Abuse</li>
     </ul>
 
     <h2>⭐ If You Have Time</h2>
     <ul>
-        <li><input type="checkbox">Amigo Brothers</li>
-        <li><input type="checkbox">Didi</li>
-        <li><input type="checkbox">Stammer</li>
-        <li><input type="checkbox">Post Early for Christmas</li>
-        <li><input type="checkbox">This is Going to Hurt Just a Little Bit</li>
-        <li><input type="checkbox">Crime and Punishment</li>
+        <li><input type="checkbox"> Amigo Brothers</li>
+        <li><input type="checkbox"> Didi</li>
+        <li><input type="checkbox"> Stammer</li>
+        <li><input type="checkbox"> Post Early for Christmas</li>
+        <li><input type="checkbox"> This is Going to Hurt Just a Little Bit</li>
+        <li><input type="checkbox"> Crime and Punishment</li>
     </ul>
-
 </div>
 
 <script>
